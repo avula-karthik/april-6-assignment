@@ -74,6 +74,8 @@ router.get('/transaction', async (req, res) => {
                 transaction;
             }
         });
+        await transaction.commit();
+        res.json('Transaction Done');
     } catch (error) {
         console.log(error);
         if (transaction) {
